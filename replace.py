@@ -18,8 +18,9 @@ common_list = common_list.read()
 
 def replace(input_file, common_list):
     for i in common_list:
-        if i[1] in input_file: #FIXME
-            input_file = input_file.replace(i[1], i[0])
+        for j in i[1]:
+            if i[1][j] in input_file: #FIXME
+            input_file = input_file.replace(i[1][j], i[0])
     return input_file
 
 output_file = replace(input_file, common_list)
